@@ -99,4 +99,31 @@ else
 fi
 
 ```
+#### Exercice 5. Factorielle
 
+```bash
+#!/bin/bash
+  
+
+if [ $# != 1 ]
+then
+        exit 0
+fi
+
+nb=$1
+result=1
+
+while [ $nb -gt 1 ]
+do
+        result=$(($result*$nb))
+        let nb--
+done
+
+
+echo $result
+```
+
+#### Exercice 6. Le juste prix
+
+```bash
+```
