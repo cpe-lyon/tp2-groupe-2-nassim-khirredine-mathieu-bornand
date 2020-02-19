@@ -126,4 +126,43 @@ echo $result
 #### Exercice 6. Le juste prix
 
 ```bash
+
+#!/bin/bash
+  
+
+nbToFind=$(($RANDOM%1000))
+
+
+
+
+while true
+do
+
+read -p 'Saisir une valeur entre 1 et 1000 : ' nbGiven
+
+if [ $nbGiven -eq $nbToFind ]
+then
+        echo "Félicitations !"
+        exit 0
+elif [ $nbGiven -gt $nbToFind ]
+then
+        echo "C'est moins !"
+
+elif [ $nbGiven -lt $nbToFind ]
+then
+        echo "C'est plus !"
+fi
+
+
+done
+
+
+```
+
+
+#### Exercice 7. Statistiques
+
+```bash
+
+
 ```
