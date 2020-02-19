@@ -36,5 +36,15 @@ Ajoutez le chemin vers script à votre PATH de manière permanente.
 - ```export PATH=$PATH:/home/nkmb15/script``` on ajoute ```$PATH:/``` pour pas que ce qu'il y a dans la variable parte, c'est pour "append".
 #### Exercice 2. Contrôle de mot de passe
 ```bash
+#!/bin/bash
+PASSWORD=azerty
+read -s -p 'Entrez le mot de passe: ' a
+echo
+if [ $PASSWORD = $a ]
+then
+        echo "Mot de passe correct"
+else
+        echo "Mot de passe incorrect"
 
+fi
 ```
