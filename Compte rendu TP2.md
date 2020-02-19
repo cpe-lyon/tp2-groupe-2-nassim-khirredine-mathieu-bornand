@@ -73,3 +73,30 @@ else
 
 fi
 ```
+
+#### Exercice 4. Contrôle d’utilisateur
+
+```bash
+
+#!/bin/bash
+  
+
+if [ $# != 1 ]
+
+then
+        echo "Utilisation : ${0##*/} nom_utilisateur" 
+
+
+else
+        cat /etc/passwd | cut -d ":" -f 1 | grep -w $1 >/dev/null
+        a=$?
+        if [ $a != "1" ]
+        then
+                echo 'Utilisateur valide'
+        else
+                echo 'Utilisateur invalide'
+        fi
+fi
+
+```
+
