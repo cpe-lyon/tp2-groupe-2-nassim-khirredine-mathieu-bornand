@@ -161,8 +161,74 @@ done
 
 
 #### Exercice 7. Statistiques
+1. Écrivez un script qui prend en paramètres trois entiers (entre -100 et +100) et affiche le min, le max et la moyenne. Vous pouvez réutiliser la fonction de l’exercice 3 pour vous assurer que les paramètres sont bien des entiers.
++
+2. Généralisez le programme à un nombre quelconque de paramètres (pensez à SHIFT).
+```bash
+#!/bin/bash
+
+min=$1
+moyenne=0
+nbv=0
+max=$1
+
+nb_val=$#
+
+for i in $(seq 1 $#)
+do
+    if [[ $1 -gt 100 || $1 -lt "-100" ]]
+	then
+        echo "Error"
+        exit 1
+    else
+    if [ $1 -lt $min ]
+	then
+		min=$1;  
+    else
+		max=$1;
+    fi
+    nbv=$(($nbv+$1))
+    shift
+    fi
+done
+    nbv=$(($nbv/$nb_val))
+    echo "Max: "$max
+    echo "Min: "$min
+    echo "Moyenne: "$moy
+
+```
+3. Modifiez votre programme pour que les notes ne soient plus données en paramètres, mais saisies et stockées au fur et à mesure dans un tableau.
 
 ```bash
+#!/bin/bash
 
+min=$1
+moyenne=0
+nbv=0
+max=$1
 
+nb_val=$#
+
+for i in $(seq 1 $#)
+do
+	read -p "Choisissez une valeur:" note
+    if [[ $note -gt 100 || $note -lt "-100" ]]
+	then
+        echo "Error"
+        exit 1
+    else
+    if [ $note -lt $min ]
+	then
+		min=$note;  
+    else
+		max=$note;
+    fi
+    nbv=$(($nbv+$note))
+    shift
+    fi
+done
+    nbv=$(($nbv/$nb_val))
+    echo "Max: "$max
+    echo "Min: "$min
+    echo "Moyenne: "$moy
 ```
