@@ -206,12 +206,10 @@ min=$1
 moyenne=0
 nbv=0
 max=$1
-
-nb_val=$#
+nb_val=$1
 
 for i in $(seq 1 $#)
-do
-	read -p "Choisissez une valeur:" note
+do; read -p "Choisissez une valeur:" note
     if [[ $note -gt 100 || $note -lt "-100" ]]
 	then
         echo "Error"
